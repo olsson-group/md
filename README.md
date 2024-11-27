@@ -23,12 +23,12 @@ You can start a molecular dynamics simulation using the following command:
 python scripts/simulate.py --timestep {timestep in fs} --sampling {sampling time in ps} --burnin {burnin time in ps} --spacing {spacing between samples in ps} path/to/pdbfile.pdb
 ```
 
---timestep: The integration time step in femtoseconds (fs).
---sampling: The sampling time in picoseconds (ps).
---burnin: The burn-in time in picoseconds (ps).
---spacing: The spacing between samples in picoseconds (ps).
+- **`--timestep`**: The integration time step in femtoseconds (fs).
+- **`--sampling`**: The sampling time in picoseconds (ps).
+- **`--burnin`**: The burn-in time in picoseconds (ps).
+- **`--spacing`**: The spacing between samples in picoseconds (ps).
 
-This command will save a trajectory file at path/to/pdbfile.npz containing:
+This command will save a trajectory file at `path/to/pdbfile.npz` containing:
 
 Positions
 Velocities
