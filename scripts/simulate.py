@@ -66,7 +66,7 @@ def main():
 
     parameters = get_parameters(args)
     print(
-        f"Running {args['--sampling']}ps of simulation using {args['--force-field']} forcefield and integration timestep of {args['--timestep']}fs integration step and a {args['--burnin']}ps of burnin, saving frames every {args['--spacing']}ps starting from {input} saving to {output}, total of {parameters['total_steps']} steps"
+        f"\nRunning {args['--sampling']}ps of simulation using {args['--force-field']} forcefield and integration timestep of {args['--timestep']}fs integration step and a {args['--burnin']}ps of burnin, saving frames every {args['--spacing']}ps starting from {input} saving to {output}, total of {parameters['total_steps']} steps"
     )
 
     simulation = setup_environment(parameters, model)
@@ -74,7 +74,7 @@ def main():
 
     spacing = RegularSpacing(parameters["spacing"])
 
-    print("Burnin ...")
+    print("\nBurnin ...")
     simulate(simulation, parameters["burnin_steps"], parameters["temperature"])
 
     protein_atoms = len(model.getPositions())
@@ -82,7 +82,7 @@ def main():
     simulation.reporters.append(
         NPZReporter(output, spacing, atom_indices=range(protein_atoms))
     )
-    print("Sampling ...")
+    print("\nSampling ...")
     simulate(simulation, parameters["sampling_steps"], parameters["temperature"])
 
 
