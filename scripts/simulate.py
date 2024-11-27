@@ -21,7 +21,7 @@ Options :
   --spacing=<spacing>   Spacing time in ps [default: 5].
   --no-checkpointing    Do not use checkpointing.
   --cpmins=<cpmins>     Set checkpoint frequency in minutes [default: 5].
-  --name=<name>         Number of simulations to run [default: ""].
+  --name=<name>         Number of simulations to run [default: ].
 
     
 The extension of <input.ext> needs to be '.pdb' for processed PDB files that
