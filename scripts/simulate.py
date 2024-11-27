@@ -62,10 +62,13 @@ def main():
     output = input.replace(".pdb", f"{name}.npz")
 
     model = timewarp_md.get_openmm_model(input)
-
     model.addHydrogens()
 
     parameters = get_parameters(args)
+    print(
+        f"Running {args['--sampling']}ps of simulation using {args['--force-field']} forcefield and integration timestep of {args['--timestep']}fs integration step and a {args['--burnin']}ps of burnin, saving frames every {args['--spacing']}ps starting from {input} saving to {output}, total of {parameters['total_steps']} steps"
+    )
+
     simulation = setup_environment(parameters, model)
     minimize_energy(simulation, parameters["min_tol"])
 
