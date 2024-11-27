@@ -28,7 +28,7 @@ python scripts/simulate.py --timestep {timestep in fs} --sampling {sampling time
 - **`--burnin`**: The burn-in time in picoseconds (ps).
 - **`--spacing`**: The spacing between samples in picoseconds (ps).
 
-This command will save a trajectory file at `path/to/pdbfile.npz` containing positions, velocities and forces, of the trajectory will have data at every {spacing} ps.
+This command will save a trajectory file at `path/to/pdbfile.npz` containing positions, velocities, and forces of the trajectory will have data at every {spacing} ps.
 
 # Generating PDB Files for peptides
 From Amino Acid Sequences
