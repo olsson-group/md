@@ -65,9 +65,14 @@ def main():
     model.addHydrogens()
 
     parameters = get_parameters(args)
+    print(f"Simulation time {args['--sampling']}ps.")
+    print(f"Burnin time: {args['--burnin']}ps.")
+    print(f"Integration step: {args['--timestep']}fs")
     print(
-        f"\nRunning {args['--sampling']}ps of simulation using {args['--force-field']} forcefield and integration timestep of {args['--timestep']}fs integration step and a {args['--burnin']}ps of burnin, saving frames every {args['--spacing']}ps starting from {input} saving to {output}, total of {parameters['total_steps']} steps"
+        f"Forcefield: {args['--force-field']} starting from {input} saving to {output}, total of {parameters['total_steps']} steps"
     )
+    print(f"Saving frames every {args['--spacing']}ps")
+    print(f"Total steps: {parameters['total_steps']}")
 
     simulation = setup_environment(parameters, model)
     minimize_energy(simulation, parameters["min_tol"])
