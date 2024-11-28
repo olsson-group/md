@@ -112,7 +112,7 @@ if __name__ == "__main__":
     parser.add_argument("sequence", nargs="?")
     parser.add_argument("--random", type=int)
     parser.add_argument("--n", type=int, default=1)
-    args =  parser.parse_args()
+    args = parser.parse_args()
 
     for _ in range(args.n):
         main(args)
