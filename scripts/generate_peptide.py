@@ -53,6 +53,8 @@ def main(args):
     tmp_pdb_path = generate_peptide(sequence)
     sequence_length = len(sequence)
     path = f"results/{names[sequence_length]}/{sequence}"
+
+    print(f'python slurm/submit.py "python scripts/simulate.py {path}/traj.pdb" --mig')
     os.makedirs(path, exist_ok=True)
     tmp_pdb_path = fix_peptide(tmp_pdb_path)
     modeller = add_hydrogen_and_termini(tmp_pdb_path)
@@ -70,7 +72,7 @@ def get_random_sequence(n):
 
     sequence = random.choices(amino_acids, weights=normalized_weights, k=n)
     sequence = "".join(sequence)
-    print(f"Generated sequence: {sequence}")
+    #  print(f"Generated sequence: {sequence}")
     return sequence
 
 
